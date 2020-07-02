@@ -13,7 +13,13 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.partos.playbox.R
+import com.partos.playbox.recycler.MainMenuRecyclerViewAdapter
+import com.partos.playbox.recycler.MarginItemDecoration
+import kotlinx.android.synthetic.main.fragment_main_menu.*
+import kotlinx.android.synthetic.main.fragment_main_menu.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,10 +42,7 @@ class MainMenuFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
     private lateinit var rootView: View
-    private lateinit var image: ImageView
-    private lateinit var linearLayout: LinearLayout
-    private lateinit var loginButton: Button
-    private lateinit var creditsButton: Button
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,6 +95,19 @@ class MainMenuFragment : Fragment() {
     }
 
     private fun initFragment() {
+        recyclerView = rootView.findViewById(R.id.menu_recycler_view)
 
+        val animation = AnimationUtils.loadAnimation(rootView.context, R.anim.enter_bottom_to_top)
+        Handler().postDelayed({
+            textView.visibility = View.VISIBLE
+            rootView.textView.startAnimation(animation)
+        }, 500)
+
+        val mLayoutManager: LinearLayoutManager = LinearLayoutManager(this.context)
+        recyclerView.layoutManager = mLayoutManager
+        recyclerView.addItemDecoration(MarginItemDecoration(12))
+
+        recyclerView.adapter = MainMenuRecyclerViewAdapter()
+        
     }
 }

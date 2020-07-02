@@ -21,4 +21,14 @@
     <color name="colorRedMedium">#7F0F12</color>
     <color name="colorRedDark">#550A0C</color>
 
+    <color name="colorBlueLight">#4F8ABF</color>
+    <color name="colorBlue">#1463AA</color>
+    <color name="colorBlueMedium">#0F4A7F</color>
+    <color name="colorBlueDark">#0A3255</color>
+
+    <color name="colorOrangeLight">#EAB64D</color>
+    <color name="colorOrange">#E39D12</color>
+    <color name="colorOrangeMedium">#AA760E</color>
+    <color name="colorOrangeDark">#714F09</color>
+
 </resources>
