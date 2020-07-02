@@ -33,7 +33,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [AccountFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BeerPongMenuFragment : Fragment() {
+class BeerPongRulesFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -57,7 +57,7 @@ class BeerPongMenuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        rootView = inflater.inflate(R.layout.fragment_beer_pong_menu, container, false);
+        rootView = inflater.inflate(R.layout.fragment_beer_pong_rules, container, false);
         initFragment()
         return rootView
     }
@@ -88,49 +88,13 @@ class BeerPongMenuFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance() =
-            BeerPongMenuFragment().apply {
+            BeerPongRulesFragment().apply {
                 arguments = Bundle().apply {
                 }
             }
     }
 
     private fun initFragment() {
-        playButton = rootView.findViewById(R.id.beer_pong_menu_play)
-        rulesButton = rootView.findViewById(R.id.beer_pong_menu_rules)
-        image = rootView.findViewById(R.id.beer_pong_menu_image)
-
-        makeAnimations()
-
-        rulesButton.setOnClickListener {
-            val rulesFragment = BeerPongRulesFragment.newInstance()
-            fragmentManager
-                ?.beginTransaction()
-                ?.setCustomAnimations(
-                    R.anim.enter_right_to_left, R.anim.exit_left_to_right,
-                    R.anim.enter_left_to_right, R.anim.exit_right_to_left
-                )
-                ?.replace(R.id.main_frame_layout, rulesFragment)
-                ?.addToBackStack(BeerPongRulesFragment.toString())
-                ?.commit()
-        }
-    }
-
-    private fun makeAnimations(){
-        val animImage = AnimationUtils.loadAnimation(rootView.context, R.anim.enter_bottom_to_top)
-        val animLeft = AnimationUtils.loadAnimation(rootView.context, R.anim.enter_left_to_right)
-        val animRight = AnimationUtils.loadAnimation(rootView.context, R.anim.enter_right_to_left)
-
-        Handler().postDelayed({
-            image.visibility = View.VISIBLE
-            image.startAnimation(animImage)
-        }, 500)
-
-        Handler().postDelayed({
-            playButton.visibility = View.VISIBLE
-            rulesButton.visibility = View.VISIBLE
-            playButton.startAnimation(animLeft)
-            rulesButton.startAnimation(animRight)
-        }, 800)
 
     }
 }

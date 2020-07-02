@@ -8,7 +8,7 @@ import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.partos.playbox.MainActivity
+import com.partos.playbox.activities.MainActivity
 import com.partos.playbox.R
 import com.partos.playbox.fragments.beerpong.BeerPongMenuFragment
 import kotlinx.android.synthetic.main.row_main_menu.view.*
