@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.MainMenuFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,10 +15,11 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:fontFamily="@font/architects"
             android:gravity="center|bottom"
             android:text="@string/app_title"
             android:textSize="60dip"
-            android:fontFamily="@font/architects"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.2"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,8 +1,10 @@
 package com.partos.playbox.recycler
 
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.partos.playbox.R
@@ -26,6 +28,12 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
 
         when (position) {
             0 -> {
+                val animation =
+                    AnimationUtils.loadAnimation(holder.view.context, R.anim.enter_left_to_right)
+                Handler().postDelayed({
+                    cardView.visibility = View.VISIBLE
+                    cardView.startAnimation(animation)
+                }, 900)
                 cardView.setCardBackgroundColor(
                     ContextCompat.getColor(
                         holder.view.context,
@@ -43,6 +51,12 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
             }
 
             1 -> {
+                val animation =
+                    AnimationUtils.loadAnimation(holder.view.context, R.anim.enter_right_to_left)
+                Handler().postDelayed({
+                    cardView.visibility = View.VISIBLE
+                    cardView.startAnimation(animation)
+                }, 900)
                 cardView.setCardBackgroundColor(
                     ContextCompat.getColor(
                         holder.view.context,
@@ -60,9 +74,17 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
             }
 
             2 -> {
-                cardView.setCardBackgroundColor(ContextCompat.getColor(
-                    holder.view.context,
-                    R.color.colorGreenLight)
+                val animation =
+                    AnimationUtils.loadAnimation(holder.view.context, R.anim.enter_left_to_right)
+                Handler().postDelayed({
+                    cardView.visibility = View.VISIBLE
+                    cardView.startAnimation(animation)
+                }, 900)
+                cardView.setCardBackgroundColor(
+                    ContextCompat.getColor(
+                        holder.view.context,
+                        R.color.colorGreenLight
+                    )
                 )
                 cardView.setStrokeColor(
                     ContextCompat.getColor(
