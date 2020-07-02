@@ -5,4 +5,6 @@
     <string name="pictionary">Kalambury</string>
     <string name="bottles">Flanki</string>
     <string name="beer_pong">Beer Pong</string>
+    <string name="rules">Zasady</string>
+    <string name="play">Graj</string>
 </resources>

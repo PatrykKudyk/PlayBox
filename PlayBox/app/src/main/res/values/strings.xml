@@ -4,4 +4,6 @@
     <string name="pictionary">Pictionary</string>
     <string name="bottles">Bottles</string>
     <string name="beer_pong">Beer Pong</string>
+    <string name="rules">Rules</string>
+    <string name="play">Play</string>
 </resources>

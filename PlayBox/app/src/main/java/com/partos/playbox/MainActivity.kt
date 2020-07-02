@@ -4,9 +4,11 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.partos.playbox.fragments.MainMenuFragment
+import com.partos.playbox.fragments.beerpong.BeerPongMenuFragment
 
 class MainActivity : AppCompatActivity(),
-    MainMenuFragment.OnFragmentInteractionListener {
+    MainMenuFragment.OnFragmentInteractionListener,
+    BeerPongMenuFragment.OnFragmentInteractionListener {
 
     private lateinit var mainMenuFragment: MainMenuFragment
 

@@ -6,8 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.partos.playbox.MainActivity
 import com.partos.playbox.R
+import com.partos.playbox.fragments.beerpong.BeerPongMenuFragment
 import kotlinx.android.synthetic.main.row_main_menu.view.*
 
 class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>() {
@@ -22,6 +25,7 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
     }
 
     override fun onBindViewHolder(holder: MainMenuViewHolder, position: Int) {
+        val cardView = holder.view.row_menu_card_view
         val image = holder.view.menu_image_view
         val text = holder.view.menu_text_view
 
@@ -44,6 +48,33 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
                 image.setImageResource(R.drawable.bottles)
                 text.setText(R.string.bottles)
             }
+        }
+
+        cardView.setOnClickListener {
+            lateinit var fragment: Fragment
+            when (position) {
+                0 -> {
+
+                }
+
+                1 -> {
+                    fragment = BeerPongMenuFragment.newInstance()
+                }
+
+                2 -> {
+
+                }
+            }
+            val manager = (holder.itemView.context as MainActivity).supportFragmentManager
+            manager
+                .beginTransaction()
+                .setCustomAnimations(
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right,
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left
+                )
+                .replace(R.id.main_frame_layout, fragment)
+                .addToBackStack("game chosen")
+                .commit()
         }
     }
 
