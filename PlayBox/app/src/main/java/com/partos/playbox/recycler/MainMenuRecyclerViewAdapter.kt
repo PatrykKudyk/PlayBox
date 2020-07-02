@@ -22,18 +22,35 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
     }
 
     override fun onBindViewHolder(holder: MainMenuViewHolder, position: Int) {
-        val cardView = holder.view.row_menu_card_view
         val image = holder.view.menu_image_view
         val text = holder.view.menu_text_view
 
         when (position) {
             0 -> {
-                val animation =
-                    AnimationUtils.loadAnimation(holder.view.context, R.anim.enter_left_to_right)
-                Handler().postDelayed({
-                    cardView.visibility = View.VISIBLE
-                    cardView.startAnimation(animation)
-                }, 900)
+                animLeft(holder)
+                setColor(0, holder)
+                image.setImageResource(R.drawable.charade)
+                text.setText(R.string.pictionary)
+            }
+            1 -> {
+                animRight(holder)
+                setColor(1, holder)
+                image.setImageResource(R.drawable.beer_pong)
+                text.setText(R.string.beer_pong)
+            }
+            2 -> {
+                animLeft(holder)
+                setColor(2, holder)
+                image.setImageResource(R.drawable.bottles)
+                text.setText(R.string.bottles)
+            }
+        }
+    }
+
+    private fun setColor(color: Int, holder: MainMenuViewHolder) {
+        val cardView = holder.view.row_menu_card_view
+        when (color) {
+            0 -> {
                 cardView.setCardBackgroundColor(
                     ContextCompat.getColor(
                         holder.view.context,
@@ -46,10 +63,7 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
                         R.color.colorYellowDark
                     )
                 )
-                image.setImageResource(R.drawable.charade)
-                text.setText(R.string.pictionary)
             }
-
             1 -> {
                 val animation =
                     AnimationUtils.loadAnimation(holder.view.context, R.anim.enter_right_to_left)
@@ -69,10 +83,7 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
                         R.color.colorRedDark
                     )
                 )
-                image.setImageResource(R.drawable.beer_pong)
-                text.setText(R.string.beer_pong)
             }
-
             2 -> {
                 val animation =
                     AnimationUtils.loadAnimation(holder.view.context, R.anim.enter_left_to_right)
@@ -92,12 +103,29 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
                         R.color.colorGreenDark
                     )
                 )
-                image.setImageResource(R.drawable.bottles)
-                text.setText(R.string.bottles)
             }
         }
     }
 
+    private fun animLeft(holder: MainMenuViewHolder) {
+        val cardView = holder.view.row_menu_card_view
+        val animation =
+            AnimationUtils.loadAnimation(holder.view.context, R.anim.enter_left_to_right)
+        Handler().postDelayed({
+            cardView.visibility = View.VISIBLE
+            cardView.startAnimation(animation)
+        }, 900)
+    }
+
+    private fun animRight(holder: MainMenuViewHolder) {
+        val cardView = holder.view.row_menu_card_view
+        val animation =
+            AnimationUtils.loadAnimation(holder.view.context, R.anim.enter_right_to_left)
+        Handler().postDelayed({
+            cardView.visibility = View.VISIBLE
+            cardView.startAnimation(animation)
+        }, 900)
+    }
 }
 
 
