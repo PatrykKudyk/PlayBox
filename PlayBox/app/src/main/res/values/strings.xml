@@ -6,6 +6,16 @@
     <string name="beer_pong">Beer Pong</string>
     <string name="rules">Rules</string>
     <string name="play">Play</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="beer_pong_rules">1. Take 3/6/10 cups for each team.\n\n
+        2. Place cups on the two sides of the table on triangle shape.\n\n
+        3. Take at least 2 ping-pong balls.\n\n
+        4. Decide which team starts the game.\n\n
+        5. The aim of the game is to throw the ball to every of the enemy\'s cups.\n\n
+        6. Teams throws 2 balls alternately.\n\n
+        7. Each turn you have 2 shots. If 2 balls fall into the same enemy\'s cup you got 1 extra shot.\n\n
+        8. At the end of each turn defenders team has to drink the beer from the cups that has been "checked". They cannot throw before the cups are empty.\n\n
+        9. When the ball spins around cup\'s walls the defenders team can try to blow it up. If it works, there is no "check" for attackers.\n\n
+        10. The game ends when one team has no cups left. Then they lose.\n\n
+        Have fun!\n
+    </string>
 </resources>
