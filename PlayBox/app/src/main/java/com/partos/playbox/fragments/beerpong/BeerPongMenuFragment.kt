@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.Button
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.partos.playbox.R
@@ -38,6 +40,9 @@ class BeerPongMenuFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
     private lateinit var rootView: View
+    private lateinit var image: ImageView
+    private lateinit var playButton: Button
+    private lateinit var rulesButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,6 +95,30 @@ class BeerPongMenuFragment : Fragment() {
     }
 
     private fun initFragment() {
+        playButton = rootView.findViewById(R.id.beer_pong_menu_play)
+        rulesButton = rootView.findViewById(R.id.beer_pong_menu_rules)
+        image = rootView.findViewById(R.id.beer_pong_menu_image)
+
+        makeAnimations()
+
+    }
+
+    private fun makeAnimations(){
+        val animImage = AnimationUtils.loadAnimation(rootView.context, R.anim.enter_bottom_to_top)
+        val animLeft = AnimationUtils.loadAnimation(rootView.context, R.anim.enter_left_to_right)
+        val animRight = AnimationUtils.loadAnimation(rootView.context, R.anim.enter_right_to_left)
+
+        Handler().postDelayed({
+            image.visibility = View.VISIBLE
+            image.startAnimation(animImage)
+        }, 500)
+
+        Handler().postDelayed({
+            playButton.visibility = View.VISIBLE
+            rulesButton.visibility = View.VISIBLE
+            playButton.startAnimation(animLeft)
+            rulesButton.startAnimation(animRight)
+        }, 800)
 
     }
 }
