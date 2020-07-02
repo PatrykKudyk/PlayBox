@@ -16,6 +16,7 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.partos.playbox.R
+import com.partos.playbox.recycler.MainMenuRecyclerViewAdapter
 import com.partos.playbox.recycler.MarginItemDecoration
 
 
@@ -98,6 +99,6 @@ class MainMenuFragment : Fragment() {
         recyclerView.layoutManager = mLayoutManager
         recyclerView.addItemDecoration(MarginItemDecoration(12))
 
-        
+        recyclerView.adapter = MainMenuRecyclerViewAdapter()
     }
 }

@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">Play Box</string>
     <string name="app_title">Play Box</string>
+    <string name="pictionary">Kalambury</string>
+    <string name="bottles">Flanki</string>
+    <string name="beer_pong">Beer Pong</string>
 </resources>
