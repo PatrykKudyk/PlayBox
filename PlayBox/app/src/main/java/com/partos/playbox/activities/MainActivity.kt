@@ -5,13 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.partos.playbox.R
 import com.partos.playbox.fragments.MainMenuFragment
-import com.partos.playbox.fragments.beerpong.BeerPongMenuFragment
-import com.partos.playbox.fragments.beerpong.BeerPongRulesFragment
 
 class MainActivity : AppCompatActivity(),
-    MainMenuFragment.OnFragmentInteractionListener,
-    BeerPongMenuFragment.OnFragmentInteractionListener,
-    BeerPongRulesFragment.OnFragmentInteractionListener {
+    MainMenuFragment.OnFragmentInteractionListener {
 
     private lateinit var mainMenuFragment: MainMenuFragment
 

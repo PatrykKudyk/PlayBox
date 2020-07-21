@@ -3,20 +3,6 @@
     <string name="app_name">Play Box</string>
     <string name="app_title">Play Box</string>
     <string name="pictionary">Kalambury</string>
-    <string name="bottles">Flanki</string>
-    <string name="beer_pong">Beer Pong</string>
     <string name="rules">Zasady</string>
     <string name="play">Graj</string>
-    <string name="beer_pong_rules">1. Weźcie 3/6/10 kubków dla każdej z drużyn.\n\n
-        2. Ustawcie kubki w kształt trójkąta po 2-ch stronach stołu.\n\n
-        3. Weźcie co najmniej 2 piłeczki ping-pongowe.\n\n
-        4. Wybierzcie, która drużyna zaczyna.\n\n
-        5. Celem gry jest pozbycie się wszystkich kubków drużyny przeciwnej.\n\n
-        6. Drużyny rzucają po 2 piłeczki na zmianę.\n\n
-        7. Co turę macie 2 rzuty. Jeśli obydwie piłeczki trafią do tego samego kubka - macie dodatkowy rzut.\n\n
-        8. Na koniec każdej tury broniąca drużyna musi wypić piwo z kubków, które zostały trafione. Nie mogą wykonać swojej tury dopóki nie wypiją całego piwa z kubków.\n\n
-        9. Jeśli piłeczka kręci się po ścianach kubka - możecie spróbować ją wydmuchać. Jeśli się uda, kubek nie zostaje trafiony.\n\n
-        10. Gra kończy się jeśli któraś z drużyn zostaje bez kubków. Oni przegrywają.\n\n
-        Życzymy dobrej zabawy!\n
-    </string>
 </resources>

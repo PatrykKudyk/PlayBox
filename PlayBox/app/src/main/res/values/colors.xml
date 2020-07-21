@@ -18,6 +18,7 @@
     <color name="colorGreenBackground">#F0F7E9</color>
 
     <color name="colorRedBackground">#F7E9EA</color>
+    <color name="colorRedLightLight">#E7BDBE</color>
     <color name="colorRedLight">#BF4F52</color>
     <color name="colorRed">#AA1418</color>
     <color name="colorRedMedium">#7F0F12</color>

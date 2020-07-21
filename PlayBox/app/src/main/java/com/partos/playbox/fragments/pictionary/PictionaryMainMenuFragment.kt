@@ -1,24 +1,15 @@
-package com.partos.playbox.fragments.beerpong
+package com.partos.playbox.fragments.pictionary
 
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
-import android.widget.Button
-import android.widget.ImageView
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.Fragment
 import com.partos.playbox.R
-import com.partos.playbox.recycler.MainMenuRecyclerViewAdapter
-import com.partos.playbox.recycler.MarginItemDecoration
-import kotlinx.android.synthetic.main.fragment_main_menu.*
-import kotlinx.android.synthetic.main.fragment_main_menu.view.*
-
+import com.partos.playbox.fragments.MainMenuFragment
+import java.lang.RuntimeException
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,22 +18,16 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [AccountFragment.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [AccountFragment.newInstance] factory method to
+ * Use the [PictionaryMainMenuFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BeerPongRulesFragment : Fragment() {
+class PictionaryMainMenuFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
-
     private lateinit var rootView: View
-    private lateinit var image: ImageView
-    private lateinit var playButton: Button
-    private lateinit var rulesButton: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,22 +38,22 @@ class BeerPongRulesFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        rootView = inflater.inflate(R.layout.fragment_beer_pong_rules, container, false);
+        // Inflate the layout for this fragment
+        rootView = inflater.inflate(R.layout.fragment_pictionary_main_menu, container, false)
         initFragment()
         return rootView
     }
 
     fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
+        listener?.onFragmentInteractionListener(uri)
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
+        if (context is OnFragmentInteractionListener){
             listener = context
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
@@ -80,16 +65,26 @@ class BeerPongRulesFragment : Fragment() {
         listener = null
     }
 
-    interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+    interface OnFragmentInteractionListener{
+        fun onFragmentInteractionListener(uri: Uri)
     }
 
     companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment PictionaryMainMenuFragment.
+         */
+        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance() =
-            BeerPongRulesFragment().apply {
+        fun newInstance(param1: String, param2: String) =
+            PictionaryMainMenuFragment().apply {
                 arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
                 }
             }
     }
