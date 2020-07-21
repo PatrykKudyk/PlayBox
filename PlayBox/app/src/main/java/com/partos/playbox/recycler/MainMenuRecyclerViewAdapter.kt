@@ -22,6 +22,7 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
     }
 
     override fun onBindViewHolder(holder: MainMenuViewHolder, position: Int) {
+        val cardView = holder.view.row_menu_card_view
         val image = holder.view.menu_image_view
         val text = holder.view.menu_text_view
 
@@ -32,18 +33,33 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
                 image.setImageResource(R.drawable.charade)
                 text.setText(R.string.pictionary)
             }
-            1 -> {
-                animRight(holder)
-                setColor(1, holder)
-                image.setImageResource(R.drawable.beer_pong)
-                text.setText(R.string.beer_pong)
+        }
+
+        cardView.setOnClickListener {
+//            lateinit var fragment: Fragment
+            when (position) {
+                0 -> {
+
+                }
+
+                1 -> {
+
+                }
+
+                2 -> {
+
+                }
             }
-            2 -> {
-                animLeft(holder)
-                setColor(2, holder)
-                image.setImageResource(R.drawable.bottles)
-                text.setText(R.string.bottles)
-            }
+//            val manager = (holder.itemView.context as MainActivity).supportFragmentManager
+//            manager
+//                .beginTransaction()
+//                .setCustomAnimations(
+//                    R.anim.enter_right_to_left, R.anim.exit_left_to_right,
+//                    R.anim.enter_left_to_right, R.anim.exit_right_to_left
+//                )
+//                .replace(R.id.main_frame_layout, fragment)
+//                .addToBackStack("game chosen")
+//                .commit()
         }
     }
 
