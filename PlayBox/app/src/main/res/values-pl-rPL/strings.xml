@@ -5,4 +5,7 @@
     <string name="pictionary">Kalambury</string>
     <string name="rules">Zasady</string>
     <string name="play">Graj</string>
+    <string name="classic">Gra klasyczna</string>
+    <string name="group">Gra drużynowa</string>
+
 </resources>

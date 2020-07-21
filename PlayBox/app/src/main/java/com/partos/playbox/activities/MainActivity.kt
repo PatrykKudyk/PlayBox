@@ -1,13 +1,15 @@
 package com.partos.playbox.activities
 
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.partos.playbox.R
 import com.partos.playbox.fragments.MainMenuFragment
+import com.partos.playbox.fragments.pictionary.PictionaryMainMenuFragment
 
 class MainActivity : AppCompatActivity(),
-    MainMenuFragment.OnFragmentInteractionListener {
+    MainMenuFragment.OnFragmentInteractionListener,
+    PictionaryMainMenuFragment.OnFragmentInteractionListener {
 
     private lateinit var mainMenuFragment: MainMenuFragment
 

@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.partos.playbox.R
 import com.partos.playbox.fragments.MainMenuFragment
+import com.partos.playbox.logic.pictionary.PictionaryMainMenuLogic
 import java.lang.RuntimeException
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,7 +29,7 @@ class PictionaryMainMenuFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
     private lateinit var rootView: View
-
+    private lateinit var logicHolder: PictionaryMainMenuLogic
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,12 +45,13 @@ class PictionaryMainMenuFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_pictionary_main_menu, container, false)
-        initFragment()
+        logicHolder = PictionaryMainMenuLogic(rootView, fragmentManager as FragmentManager)
+        logicHolder.initFragment()
         return rootView
     }
 
     fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteractionListener(uri)
+        listener?.onFragmentInteraction(uri)
     }
 
     override fun onAttach(context: Context) {
@@ -66,7 +69,7 @@ class PictionaryMainMenuFragment : Fragment() {
     }
 
     interface OnFragmentInteractionListener{
-        fun onFragmentInteractionListener(uri: Uri)
+        fun onFragmentInteraction(uri: Uri)
     }
 
     companion object {
@@ -80,16 +83,12 @@ class PictionaryMainMenuFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             PictionaryMainMenuFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
                 }
             }
     }
 
-    private fun initFragment() {
-
-    }
 }

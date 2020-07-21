@@ -4,6 +4,7 @@
     <string name="pictionary">Pictionary</string>
     <string name="rules">Rules</string>
     <string name="play">Play</string>
-
+    <string name="classic">Classic Game</string>
+    <string name="group">Teams Game</string>
 
 </resources>
