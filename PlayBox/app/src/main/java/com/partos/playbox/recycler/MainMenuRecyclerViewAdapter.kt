@@ -6,8 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.partos.playbox.R
+import com.partos.playbox.activities.MainActivity
+import com.partos.playbox.fragments.pictionary.PictionaryMainMenuFragment
 import kotlinx.android.synthetic.main.row_main_menu.view.*
 
 class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>() {
@@ -36,10 +39,10 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
         }
 
         cardView.setOnClickListener {
-//            lateinit var fragment: Fragment
+            lateinit var fragment: Fragment
             when (position) {
                 0 -> {
-
+                    fragment = PictionaryMainMenuFragment.newInstance()
                 }
 
                 1 -> {
@@ -50,16 +53,16 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
 
                 }
             }
-//            val manager = (holder.itemView.context as MainActivity).supportFragmentManager
-//            manager
-//                .beginTransaction()
-//                .setCustomAnimations(
-//                    R.anim.enter_right_to_left, R.anim.exit_left_to_right,
-//                    R.anim.enter_left_to_right, R.anim.exit_right_to_left
-//                )
-//                .replace(R.id.main_frame_layout, fragment)
-//                .addToBackStack("game chosen")
-//                .commit()
+            val manager = (holder.itemView.context as MainActivity).supportFragmentManager
+            manager
+                .beginTransaction()
+                .setCustomAnimations(
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right,
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left
+                )
+                .replace(R.id.main_frame_layout, fragment)
+                .addToBackStack("game chosen")
+                .commit()
         }
     }
 
@@ -90,13 +93,13 @@ class MainMenuRecyclerViewAdapter() : RecyclerView.Adapter<MainMenuViewHolder>()
                 cardView.setCardBackgroundColor(
                     ContextCompat.getColor(
                         holder.view.context,
-                        R.color.colorRedLight
+                        R.color.colorBlueLight
                     )
                 )
                 cardView.setStrokeColor(
                     ContextCompat.getColor(
                         holder.view.context,
-                        R.color.colorRedDark
+                        R.color.colorBlueDark
                     )
                 )
             }
