@@ -5,13 +5,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.partos.playbox.R
 import com.partos.playbox.fragments.MainMenuFragment
+import com.partos.playbox.fragments.pictionary.PictionaryClassicFragment
 import com.partos.playbox.fragments.pictionary.PictionaryMainMenuFragment
 import com.partos.playbox.fragments.pictionary.PictionaryRulesFragment
 
 class MainActivity : AppCompatActivity(),
     MainMenuFragment.OnFragmentInteractionListener,
     PictionaryMainMenuFragment.OnFragmentInteractionListener,
-    PictionaryRulesFragment.OnFragmentInteractionListener {
+    PictionaryRulesFragment.OnFragmentInteractionListener,
+    PictionaryClassicFragment.OnFragmentInteractionListener {
 
     private lateinit var mainMenuFragment: MainMenuFragment
 
@@ -34,6 +36,10 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onFragmentInteraction(uri: Uri) {
+
+    }
+
+    override fun onBackPressed() {
 
     }
 }

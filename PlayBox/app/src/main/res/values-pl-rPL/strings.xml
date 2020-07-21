@@ -9,7 +9,7 @@
     <string name="teams">Gra drużynowa</string>
     <string name="pictionary_rules_classic">Na początku wybieracie osobę, która pokazuje słowo jako pierwsza.\n\n
     Następnie osoba ta losuje słowo i zaczyna pokazywanie.\n\n
-    Ma 1.5 minuty na odgadnięcie przez was słowa.\n\n
+    Ma 2 minuty na odgadnięcie przez was słowa.\n\n
     Osoba, która zgadła słowo jest następnym pokazującym.\n\n</string>
     <string name="pictionary_rules_teams">Na start dzielicie się na dwie drużyny.\n\n
     Każda wybiera pierwszego pokazującego.\n\n
@@ -17,5 +17,7 @@
     Wybierają one losowanie słowa i zaczynają pokazywanie - każda osoba swojej drużynie.\n\n
     Jeśli drużyna zgadnie słowo swojego pokazującego - tura się kończy, a drużyna ta zdobywa punkt.\n\n
     Jeżeli jednak drużyna zgadnie słowo drużyny przeciwnej - punkt ląduje na koncie przeciwników.\n\n</string>
+    <string name="show_word">Pokaż hasło</string>
+    <string name="back">Wróć</string>
 
 </resources>
