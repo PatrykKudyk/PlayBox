@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.partos.playbox.R
 import com.partos.playbox.fragments.MainMenuFragment
 import com.partos.playbox.fragments.pictionary.PictionaryMainMenuFragment
+import com.partos.playbox.fragments.pictionary.PictionaryRulesFragment
 
 class MainActivity : AppCompatActivity(),
     MainMenuFragment.OnFragmentInteractionListener,
-    PictionaryMainMenuFragment.OnFragmentInteractionListener {
+    PictionaryMainMenuFragment.OnFragmentInteractionListener,
+    PictionaryRulesFragment.OnFragmentInteractionListener {
 
     private lateinit var mainMenuFragment: MainMenuFragment
 

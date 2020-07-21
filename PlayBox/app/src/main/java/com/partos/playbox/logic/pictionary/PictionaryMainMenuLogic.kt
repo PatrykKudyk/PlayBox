@@ -6,9 +6,9 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import androidx.fragment.app.FragmentManager
 import com.partos.playbox.R
-import kotlinx.android.synthetic.main.fragment_pictionary_main_menu.view.*
+import com.partos.playbox.fragments.pictionary.PictionaryRulesFragment
 
-class PictionaryMainMenuLogic (val rootView: View, val fragmentManager: FragmentManager) {
+class PictionaryMainMenuLogic(val rootView: View, val fragmentManager: FragmentManager) {
 
     private lateinit var classicButton: Button
     private lateinit var teamsButton: Button
@@ -42,7 +42,16 @@ class PictionaryMainMenuLogic (val rootView: View, val fragmentManager: Fragment
 
         }
         rulesButton.setOnClickListener {
-
+            val fragment = PictionaryRulesFragment.newInstance()
+            fragmentManager
+                .beginTransaction()
+                .setCustomAnimations(
+                    R.anim.enter_right_to_left, R.anim.exit_left_to_right,
+                    R.anim.enter_left_to_right, R.anim.exit_right_to_left
+                )
+                .replace(R.id.main_frame_layout, fragment)
+                .addToBackStack(PictionaryRulesFragment.toString())
+                .commit()
         }
     }
 

@@ -69,7 +69,7 @@
             android:layout_height="0dp"
             android:background="@drawable/button_background_yellow_dark"
             android:fontFamily="@font/dustismo_bold"
-            android:text="@string/group"
+            android:text="@string/teams"
             android:textSize="20dip"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
