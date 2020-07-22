@@ -18,6 +18,7 @@
     Jeśli drużyna zgadnie slogan swojego pokazującego - tura się kończy, a drużyna ta zdobywa punkt.\n\n
     Jeżeli jednak drużyna zgadnie slogan drużyny przeciwnej - punkt ląduje na koncie przeciwników.\n\n</string>
     <string name="show_word">Pokaż slogan</string>
+    <string name="show_words">Pokaż slogany</string>
     <string name="back">Wróć</string>
     <string name="toast_no_slogan">Nie udało się pobrać sloganu, spróbuj ponownie</string>
 

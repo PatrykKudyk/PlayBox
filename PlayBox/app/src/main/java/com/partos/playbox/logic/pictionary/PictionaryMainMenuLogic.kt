@@ -43,9 +43,13 @@ class PictionaryMainMenuLogic(val rootView: View, val fragmentManager: FragmentM
             intent.putExtra("game", 1)
             rootView.context.startActivity(intent)
         }
-        teamsButton.setOnClickListener {
 
+        teamsButton.setOnClickListener {
+            val intent = Intent(rootView.context, PictionaryActivity::class.java)
+            intent.putExtra("game", 2)
+            rootView.context.startActivity(intent)
         }
+
         rulesButton.setOnClickListener {
             val fragment = PictionaryRulesFragment.newInstance()
             fragmentManager

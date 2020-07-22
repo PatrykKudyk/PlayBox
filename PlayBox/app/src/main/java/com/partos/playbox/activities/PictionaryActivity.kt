@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment
 import com.partos.playbox.R
 import com.partos.playbox.fragments.MainMenuFragment
 import com.partos.playbox.fragments.pictionary.PictionaryClassicFragment
+import com.partos.playbox.fragments.pictionary.PictionaryTeamFragment
 
 class PictionaryActivity : AppCompatActivity(),
-    PictionaryClassicFragment.OnFragmentInteractionListener {
+    PictionaryClassicFragment.OnFragmentInteractionListener,
+    PictionaryTeamFragment.OnFragmentInteractionListener {
 
     private lateinit var fragment: Fragment
 
@@ -20,8 +22,8 @@ class PictionaryActivity : AppCompatActivity(),
         val type = intent.getSerializableExtra("game")
         if (type == 1) {
             fragment = PictionaryClassicFragment.newInstance()
-        } else {
-
+        } else if (type == 2) {
+            fragment = PictionaryTeamFragment.newInstance()
         }
 
         supportFragmentManager
