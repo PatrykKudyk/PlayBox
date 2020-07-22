@@ -6,13 +6,16 @@
     <string name="play">Play</string>
     <string name="classic">Classic Game</string>
     <string name="teams">Teams Game</string>
-    <string name="pictionary_rules_classic">You have to chose a person that will show the words to the rest.\n\n
-    Then the person draws the word and starts to show it.\n\n
-    He has only 1.5 minute to make the word guessed.\n\n
-    The person that guessed the word correct is the next to show.\n\n</string>
+    <string name="pictionary_rules_classic">You have to chose a person that will show the slogans to the rest.\n\n
+    Then the person draws the slogan and starts to show it.\n\n
+    He has only 2 minutes to make the slogan guessed.\n\n
+    The person that guessed the slogan correct is the next to show.\n\n</string>
     <string name="pictionary_rules_teams">Divide yourselves into 2 teams.\n\n
-    Each team chooses the person that will show the words.\n\n
-    Delegates stand before teams and draw a words to show and start showing - each person shows word to his team.\n\n
-    If the teams guessed their word - they get the point, but if they guessed the enemies word - the enemies get the point\n\n</string>
+    Each team chooses the person that will show the slogans.\n\n
+    Delegates stand before teams and draw slogans to show and start showing - each person shows slogan to his team.\n\n
+    If the teams guessed their slogan - they get the point, but if they guessed the enemies slogan - the enemies get the point\n\n</string>
+    <string name="show_word">Show slogan</string>
+    <string name="back">Back</string>
+    <string name="toast_no_slogan">Couldn\'t fetch slogan, try again</string>
 
 </resources>

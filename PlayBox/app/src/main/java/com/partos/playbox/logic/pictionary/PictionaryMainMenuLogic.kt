@@ -1,11 +1,14 @@
 package com.partos.playbox.logic.pictionary
 
+import android.content.Intent
 import android.os.Handler
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import androidx.fragment.app.FragmentManager
 import com.partos.playbox.R
+import com.partos.playbox.activities.PictionaryActivity
+import com.partos.playbox.fragments.pictionary.PictionaryClassicFragment
 import com.partos.playbox.fragments.pictionary.PictionaryRulesFragment
 
 class PictionaryMainMenuLogic(val rootView: View, val fragmentManager: FragmentManager) {
@@ -36,7 +39,9 @@ class PictionaryMainMenuLogic(val rootView: View, val fragmentManager: FragmentM
 
     private fun attachListeners() {
         classicButton.setOnClickListener {
-
+            val intent = Intent(rootView.context, PictionaryActivity::class.java)
+            intent.putExtra("game", 1)
+            rootView.context.startActivity(intent)
         }
         teamsButton.setOnClickListener {
 

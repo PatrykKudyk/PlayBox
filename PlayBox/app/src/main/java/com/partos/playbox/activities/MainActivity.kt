@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.partos.playbox.R
 import com.partos.playbox.fragments.MainMenuFragment
+import com.partos.playbox.fragments.pictionary.PictionaryClassicFragment
 import com.partos.playbox.fragments.pictionary.PictionaryMainMenuFragment
 import com.partos.playbox.fragments.pictionary.PictionaryRulesFragment
 
