@@ -1,26 +1,28 @@
 package com.partos.playbox.activities
 
 import android.net.Uri
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.partos.playbox.R
 import com.partos.playbox.fragments.MainMenuFragment
 import com.partos.playbox.fragments.pictionary.PictionaryClassicFragment
-import com.partos.playbox.fragments.pictionary.PictionaryMainMenuFragment
-import com.partos.playbox.fragments.pictionary.PictionaryRulesFragment
 
-class MainActivity : AppCompatActivity(),
-    MainMenuFragment.OnFragmentInteractionListener,
-    PictionaryMainMenuFragment.OnFragmentInteractionListener,
-    PictionaryRulesFragment.OnFragmentInteractionListener {
+class PictionaryActivity : AppCompatActivity(),
+    PictionaryClassicFragment.OnFragmentInteractionListener {
 
-    private lateinit var mainMenuFragment: MainMenuFragment
+    private lateinit var fragment: Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_pictionary)
 
-        mainMenuFragment = MainMenuFragment.newInstance()
+        val type = intent.getSerializableExtra("game")
+        if (type == 1) {
+            fragment = PictionaryClassicFragment.newInstance()
+        } else {
+
+        }
 
         supportFragmentManager
             .beginTransaction()
@@ -30,11 +32,15 @@ class MainActivity : AppCompatActivity(),
                 R.anim.enter_top_to_bottom,
                 R.anim.exit_bottom_to_top
             )
-            .add(R.id.main_frame_layout, mainMenuFragment)
+            .add(R.id.pictionary_frame_layout, fragment)
             .commit()
     }
 
     override fun onFragmentInteraction(uri: Uri) {
+
+    }
+
+    override fun onBackPressed() {
 
     }
 }

@@ -14,6 +14,7 @@ import com.google.gson.GsonBuilder
 import com.partos.playbox.MyApp
 import com.partos.playbox.R
 import com.partos.playbox.activities.MainActivity
+import com.partos.playbox.activities.PictionaryActivity
 import com.partos.playbox.models.Slogan
 import com.partos.playbox.threads.TimerThread
 import okhttp3.*
@@ -78,14 +79,14 @@ class PictionaryClassicLogic(val rootView: View, val fragmentManager: FragmentMa
                 soundPool.stop(streamClock)
             }
             timerTextView.visibility = View.INVISIBLE
-            fragmentManager.popBackStack()
+            (context as PictionaryActivity).finish()
         }
     }
 
     private fun startTimer() {
         timerTextView.visibility = View.VISIBLE
         var threadHandler = Handler(looperThread.looper)
-        var timeLeft = 60
+        var timeLeft = 1200
         threadHandler.post(object : Runnable {
             override fun run() {
                 if (timerTextView.visibility == View.VISIBLE) {
@@ -150,9 +151,9 @@ class PictionaryClassicLogic(val rootView: View, val fragmentManager: FragmentMa
 
         val client = OkHttpClient()
 
-        val response = client.newCall(request).enqueue(object : Callback {
+        client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                (context as MainActivity).runOnUiThread {
+                (context as PictionaryActivity).runOnUiThread {
                     Toast.makeText(
                         context,
                         context.getText(R.string.toast_no_slogan),
@@ -166,7 +167,7 @@ class PictionaryClassicLogic(val rootView: View, val fragmentManager: FragmentMa
                 val gson = GsonBuilder().create()
                 val sloganFetched = gson.fromJson(body, Slogan::class.java)
 
-                (context as MainActivity).runOnUiThread{
+                (context as PictionaryActivity).runOnUiThread{
                     if (sloganFetched != null) {
                         textView.setText(sloganFetched.slogan)
                         startTimer()
