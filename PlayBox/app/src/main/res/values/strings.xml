@@ -16,5 +16,6 @@
     If the teams guessed their word - they get the point, but if they guessed the enemies word - the enemies get the point\n\n</string>
     <string name="show_word">Show word</string>
     <string name="back">Back</string>
+    <string name="toast_no_slogan">Couldn\'t fetch slogan, try again</string>
 
 </resources>

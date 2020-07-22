@@ -19,5 +19,6 @@
     Jeżeli jednak drużyna zgadnie słowo drużyny przeciwnej - punkt ląduje na koncie przeciwników.\n\n</string>
     <string name="show_word">Pokaż hasło</string>
     <string name="back">Wróć</string>
+    <string name="toast_no_slogan">Nie udało się pobrać sloganu, spróbuj ponownie</string>
 
 </resources>
